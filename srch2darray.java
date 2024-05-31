@@ -15,8 +15,7 @@ public class srch2darray {
             }
 
         }
-        System.out.println("your array is");
-        System.out.println(Arrays.deepToString(two));
+       
         System.out.println(" Now enter target no.");
         int target = in.nextInt();
         List<int[]> ans = search(row, column, two, target);
