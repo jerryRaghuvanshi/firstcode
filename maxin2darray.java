@@ -20,6 +20,8 @@ public class maxin2darray {
         }
         int ans = max(arr,row,columns);
         System.out.println(ans);
+        in.close();
+
     }
     static int max(int[][] arr,int row,int column){
         int k = Integer.MIN_VALUE;
