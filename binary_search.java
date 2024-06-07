@@ -1,7 +1,7 @@
 public class binary_search {
     public static void main(String[] args) {
         int[] arr = {1, 23, 34, 67, 89, 99};
-        int target = 1;
+        int target = 5;
         int ans = bin(arr,target);
         System.out.println(ans);
     }
@@ -20,6 +20,6 @@ public class binary_search {
                 return mid+1;
             }
         }
-        return -1;
+        return arr[start];
     }
 }

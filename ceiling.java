@@ -1,38 +1,52 @@
 public class ceiling {
     public static void main(String[] args) {
-        int[] arr = {1, 23, 34, 67, 89, 99};
-        int target = 25;
-
-        System.out.println(selling(arr, target));
+        char[] arr = {'c', 'f', 'j'};
+        char target = 'g';
+        char ans = selling(arr, target);
+        System.out.println(ans);
     }
 
-    static int selling(int[] arr, int target) {
+    static char selling(char[] letters, char target) {
         int start = 0;
-        int end = arr.length - 1;
+        int end = letters.length - 1;
+        if (letters[end] == target) {
+            return letters[start];
+        }
+        if (target < letters[start]) {
+            return letters[start];
+        }
+        if (target > letters[end]) {
+            return letters[start];
+        }
+
 
         while (start <= end) {
+            // finding middle no.
+
+
             int mid = start + (end - start) / 2;
-            if (arr[mid] > target) {
+            //comparing chars if middle element is greater than the target
+            if (letters[mid] > target) {
+
                 end = mid - 1;
-                if (arr[end-1] < target ) {
-                    return arr[end+1];
-                }
 
             }
+            //comparing chars if middle element is less than the target
+            if (letters[mid] < target) {
 
-            if (arr[mid] < target) {
+
+
                 start = mid + 1;
-
-                if (arr[start+1] > target ) {
-                    return arr[start+1];
-                }
             }
-            if (arr[mid] == target) {
-                return arr[mid];
-
+            //comparing chars if middle element is equal to the target
+            if (letters[mid] == target) {
+                return letters[mid + 1];
             }
+
+
+
         }
-return -1;
+        return letters[start + 1];
     }
 
 }
