@@ -7,7 +7,7 @@ public class srch2darray {
         int row = in.nextInt();
         System.out.println("Enter the no. of columns");
         int column = in.nextInt();
-
+        System.out.println("Enter the elements");
         int[][] two = new int[row][column];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
